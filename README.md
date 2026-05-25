@@ -75,6 +75,18 @@ O `SharedPreferences` armazena uma lista de strings JSON. O fluxo de persistênc
 
 Esse formato atende ao enunciado porque é simples, leve e suficiente para armazenar registros pequenos localmente.
 
+### Observação importante sobre Web
+
+Ao executar em Flutter Web no modo de desenvolvimento, o Chrome pode ser aberto com um perfil temporário. Nesse cenário, os dados podem desaparecer ao fechar o navegador mesmo usando `SharedPreferences`.
+
+Para testar a persistência no Web com mais fidelidade, rode com um diretório de perfil fixo, por exemplo:
+
+```bash
+flutter run -d chrome --web-port 5000 --web-browser-flag="--user-data-dir=C:\\flutter_chrome_profile"
+```
+
+No Android e no iOS, a persistência local deve permanecer normalmente após fechar e abrir o app.
+
 ## Requisitos para rodar o projeto
 
 - Flutter instalado e configurado no computador;
@@ -94,6 +106,8 @@ flutter pub get
 ```bash
 flutter run -d chrome
 ```
+
+Se quiser testar se os dados ficam salvos entre aberturas do navegador, prefira a versão com `--user-data-dir` mostrada na seção de persistência.
 
 ### 3. Rodar no Android
 
