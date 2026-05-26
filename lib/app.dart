@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'pages/movie_list_page.dart';
 
-class App extends StatelessWidget {
-  const App({super.key});
+class FilmesAssistidosApp extends StatelessWidget {
+  const FilmesAssistidosApp({super.key});
 
   @override
   Widget build(BuildContext context) {
